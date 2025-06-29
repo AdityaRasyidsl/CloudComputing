@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cipta Hospital Indonesia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1E3A8A, #3B82F6);
+      color: #fff;
+      transition: background 0.3s ease;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #FBBF24;
+    }
+
+    .toggle-mode {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #FBBF24;
+      color: #1E3A8A;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 0 40px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    p.subtitle {
+      font-size: 1.2em;
+      color: #dbeafe;
+      margin-bottom: 40px;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    .hero-img {
+      width: 100%;
+      max-width: 1000px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      margin: 0 auto 40px;
+      display: block;
+      animation: zoomIn 1.2s ease;
+    }
+
+    section {
+      margin-top: 40px;
+    }
+
+    h2 {
+      font-size: 2em;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.1em;
+      color: #e0e7ff;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 28px;
+      background: #FBBF24;
+      color: #1E3A8A;
+      border-radius: 10px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background: #F59E0B;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding: 20px;
+      color: #cbd5e1;
+      font-size: 0.9em;
+    }
+
+    .dark-mode {
+      background: linear-gradient(135deg, #0F172A, #1E293B);
+      color: #F1F5F9;
+    }
+
+    .dark-mode p { color: #cbd5e1; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.95); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <button class="toggle-mode" onclick="toggleDarkMode()">🌓 Mode</button>
+
+  <nav class="navbar">
+    <div class="logo">🏥 Cipta Hospital</div>
+    <ul class="nav-links">
+      <li><a href="#">Beranda</a></li>
+      <li><a href="#tentang">Tentang</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+      <li><a href="login.html" class="btn">Login</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Cipta Hospital Indonesia</h1>
+    <p class="subtitle">Pelayanan Kesehatan Modern Berbasis Teknologi</p>
+
+    <img src="c1b8070ae5934184d8d37c094a2ecaa3.jpg" alt="Gambar Rumah Sakit" class="hero-img" />
+
+    <section id="tentang">
+      <h2>Tentang Kami</h2>
+      <p>Rumah sakit berbasis cloud pertama di Indonesia dengan sistem digital yang mempercepat layanan medis, pendaftaran online, dan manajemen data pasien yang terintegrasi.</p>
+    </section>
+
+    <section id="kontak">
+      <h2>Hubungi Kami</h2>
+      <p>Untuk pendaftaran dan bantuan, silakan login terlebih dahulu atau hubungi admin.</p>
+      <a href="login.html" class="btn">Login / Daftar</a>
+    </section>
+  </main>
+
+  <footer>
+    &copy; Aditia Rasyid Saputra Lubis • <a href="#" style="color:inherit"></a> 231011402576
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+      localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
+    }
+    if (localStorage.getItem("darkMode") === "true") {
+      document.body.classList.add("dark-mode");
+    }
+  </script>
+</body>
+</html>

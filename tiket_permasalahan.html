@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiket Permasalahan - Cipta Hospital</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: linear-gradient(to right, #6610f2, #6f42c1);
+      color: #fff;
+    }
+    header {
+      background: #4b0082;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      color: #ffc107;
+    }
+    .container {
+      max-width: 650px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    button {
+      background: #ffc107;
+      color: #2c003e;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+      width: 100%;
+    }
+    button:hover {
+      background: #ffda44;
+    }
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Form Tiket Permasalahan</h1>
+  </header>
+  <div class="container">
+    <form onsubmit="return kirimTiket(event)">
+      <label for="nama">Nama Pengirim</label>
+      <input type="text" id="nama" required>
+
+      <label for="kategori">Kategori Permasalahan</label>
+      <select id="kategori" required>
+        <option value="">-- Pilih Kategori --</option>
+        <option>Masalah Login</option>
+        <option>Kesalahan Data Pasien</option>
+        <option>Masalah Pembayaran</option>
+        <option>Fitur Tidak Berfungsi</option>
+      </select>
+
+      <label for="deskripsi">Deskripsi Permasalahan</label>
+      <textarea id="deskripsi" rows="4" required></textarea>
+
+      <label for="lampiran">Lampiran Gambar (opsional)</label>
+      <input type="file" id="lampiran" accept="image/*">
+
+      <button type="submit">Kirim Tiket</button>
+    </form>
+  </div>
+
+  <script>
+    function kirimTiket(event) {
+      event.preventDefault();
+      alert("✅ Tiket berhasil dikirim! Tim kami akan segera menindaklanjuti.");
+      document.querySelector("form").reset();
+    }
+  </script>
+</body>
+</html>

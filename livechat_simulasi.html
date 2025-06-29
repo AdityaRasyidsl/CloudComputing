@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulasi Live Chat - Cipta Hospital</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .chatbox {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 320px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      z-index: 999;
+    }
+    .chat-header {
+      background: #0077b6;
+      color: #fff;
+      padding: 15px;
+      font-weight: bold;
+      text-align: center;
+    }
+    .chat-messages {
+      flex: 1;
+      padding: 15px;
+      overflow-y: auto;
+      max-height: 300px;
+    }
+    .chat-messages .msg {
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 8px;
+      max-width: 80%;
+    }
+    .msg.user {
+      background: #e0f7fa;
+      align-self: flex-end;
+    }
+    .msg.admin {
+      background: #dcedc8;
+      align-self: flex-start;
+    }
+    .chat-input {
+      display: flex;
+      border-top: 1px solid #ccc;
+    }
+    .chat-input input {
+      flex: 1;
+      border: none;
+      padding: 12px;
+      font-size: 1rem;
+    }
+    .chat-input button {
+      background: #ffb703;
+      border: none;
+      padding: 0 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="chatbox">
+    <div class="chat-header">Live Chat - Cipta Hospital</div>
+    <div class="chat-messages" id="chat">
+      <div class="msg admin">Selamat datang! Ada yang bisa kami bantu?</div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Tulis pesan...">
+      <button onclick="kirimPesan()">Kirim</button>
+    </div>
+  </div>
+
+  <script>
+    function kirimPesan() {
+      const input = document.getElementById("userInput");
+      const chat = document.getElementById("chat");
+      const pesan = input.value.trim();
+      if (!pesan) return;
+
+      const userMsg = document.createElement("div");
+      userMsg.className = "msg user";
+      userMsg.textContent = pesan;
+      chat.appendChild(userMsg);
+
+      input.value = "";
+      chat.scrollTop = chat.scrollHeight;
+
+      setTimeout(() => {
+        const adminMsg = document.createElement("div");
+        adminMsg.className = "msg admin";
+        adminMsg.textContent = "Terima kasih atas pesan Anda. Kami akan membalas secepatnya.";
+        chat.appendChild(adminMsg);
+        chat.scrollTop = chat.scrollHeight;
+      }, 1200);
+    }
+  </script>
+
+</body>
+</html>

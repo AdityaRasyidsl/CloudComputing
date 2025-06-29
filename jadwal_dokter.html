@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jadwal Dokter - Cipta Hospital</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: linear-gradient(to right, #004080, #00aaff);
+      color: #fff;
+    }
+    header {
+      background: #003366;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      color: #ffcc00;
+    }
+    .container {
+      padding: 30px;
+    }
+    .table-wrapper {
+      overflow-x: auto;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 12px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      padding: 12px;
+      text-align: center;
+    }
+    th {
+      background-color: #0059b3;
+    }
+    tr:nth-child(even) {
+      background-color: rgba(255,255,255,0.05);
+    }
+    tr:hover {
+      background-color: rgba(255,255,255,0.1);
+    }
+    .foto-dokter {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid #fff;
+    }
+    @media (max-width: 600px) {
+      th, td {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Jadwal Dokter Cipta Hospital</h1>
+  </header>
+  <div class="container">
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Foto</th>
+            <th>Nama Dokter</th>
+            <th>Spesialis</th>
+            <th>Hari</th>
+            <th>Jam</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="47a4448f2df0046ee1f7bed28f87e551.jpg" alt="dr. Andi Wijaya" class="foto-dokter"></td>
+            <td>dr. Andi Wijaya</td>
+            <td>Spesialis Anak</td>
+            <td>Senin, Rabu</td>
+            <td>08.00 - 12.00</td>
+          </tr>
+          <tr>
+            <td><img src="f2752143d53dfa7e80e785b069734539.jpg" alt="dr. Siti Aminah" class="foto-dokter"></td>
+            <td>dr. Siti Aminah</td>
+            <td>Spesialis Kandungan</td>
+            <td>Selasa, Kamis</td>
+            <td>10.00 - 14.00</td>
+          </tr>
+          <tr>
+            <td><img src="8ed151316597851bb83becd6ff4a4d5a.jpg" alt="dr. Budi Santoso" class="foto-dokter"></td>
+            <td>dr. Budi Santoso</td>
+            <td>Spesialis Jantung</td>
+            <td>Senin - Jumat</td>
+            <td>13.00 - 16.00</td>
+          </tr>
+          <tr>
+            <td><img src="b805842256470ccbbb2269e479832d22.jpg" alt="dr. Lisa Marwah" class="foto-dokter"></td>
+            <td>dr. Lisa Marwah</td>
+            <td>Spesialis Bedah</td>
+            <td>Rabu, Jumat</td>
+            <td>09.00 - 12.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

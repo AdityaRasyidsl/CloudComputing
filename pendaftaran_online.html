@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pendaftaran Online - Cipta Hospital</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #006699, #33ccff);
+      margin: 0;
+      color: #fff;
+    }
+    header {
+      background: #004466;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      color: #ffcc00;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    button {
+      background: #ffcc00;
+      color: #002244;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+      width: 100%;
+    }
+    button:hover {
+      background: #ffe066;
+    }
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pendaftaran Online Pasien</h1>
+  </header>
+
+  <div class="container">
+    <form onsubmit="return daftar(event)">
+      <label for="nama">Nama Lengkap</label>
+      <input type="text" id="nama" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" required>
+
+      <label for="nohp">No. HP</label>
+      <input type="tel" id="nohp" required>
+
+      <label for="poli">Poli Tujuan</label>
+      <select id="poli" required>
+        <option value="">-- Pilih Poli --</option>
+        <option>Poli Anak</option>
+        <option>Poli Kandungan</option>
+        <option>Poli Jantung</option>
+        <option>Poli Bedah</option>
+      </select>
+
+      <label for="keluhan">Keluhan</label>
+      <textarea id="keluhan" rows="4" required></textarea>
+
+      <button type="submit">Daftar Sekarang</button>
+    </form>
+  </div>
+
+  <script>
+    function daftar(event) {
+      event.preventDefault();
+      alert("✅ Pendaftaran berhasil dikirim! Kami akan segera menghubungi Anda.");
+      document.querySelector("form").reset();
+    }
+  </script>
+</body>
+</html>
